@@ -3,10 +3,11 @@
 {% block head_title %}Restaurants - {{ block.super }} {% endblock head_title %}
 
 {% block content %}
-<h1>Restaurants!</h1>
+<h1>Restaurant List</h1>
 <ul>
     {% for obj in object_list %}
-        <li>{{ obj }} | {{ obj.category }} |  {{ obj.location }} | {{ obj.created_at }}</li>
+        <li><a href="/restaurants/{{ obj.slug }}"> {{ obj.name }} </a><br/>
+            {{ obj.name }} {{ obj.category }} {{ obj.location }} {{ obj.created_at }}</li>
     {% endfor %}
 </ul>
 {% endblock content %}
