@@ -20,14 +20,13 @@ class RestaurantListView(ListView):
         return queryset
 
 class RestaurantDetailView(DetailView):
-
     queryset = RestaurantLocation.objects.all()
 
 class RestaurantCreateView(CreateView):
     form_class = RestaurantLocationCreateForm
     template_name = 'restaurants/form.html'
     success_url = '/restaurants/'
-
+    
     '''
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
